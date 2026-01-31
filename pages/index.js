@@ -759,18 +759,5 @@ export default function PayOpsAgentDashboard() {
           </div>
         </div>
       </div>
-
-      {/* Architecture Footer */}
-      <div style={{maxWidth:1380,margin:'0 auto',padding:'0 18px 14px'}}>
-        <div style={{background:'#0e1420',borderRadius:8,border:'1px solid #1a2540',padding:'11px 16px'}}>
-          <div style={{fontSize:9,color:'#374151',display:'flex',gap:8,alignItems:'center',flexWrap:'wrap'}}>
-            <span style={{color:'#2a3a5c',fontWeight:600}}>Loop:</span>
-            {['👁 Observe','→','🧠 Reason (Patterns + Claude)','→','⚖️ Decide (Guardrails)','→','⚡ Act (Executor)','→','📚 Learn (Outcomes)'].map((s,i)=>(
-              <span key={i} style={{color:s==='→'?'#2a3a5c':'#6366f1',fontWeight:s==='→'?400:500,fontSize:8.5}}>{s}</span>
-            ))}
-          </div>
-        </div>
-      </div>
-    </div>
   );
 }
