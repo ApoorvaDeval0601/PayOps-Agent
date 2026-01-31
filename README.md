@@ -90,11 +90,8 @@ This is a true agentic system that:
 - Auto-rolls back actions with negative outcomes
 - Feeds learning insights back into future decisions
 
-### 🆓 Multiple Free AI Providers
-- **Groq** - 30 req/min, super fast (Recommended)
-- **Google Gemini** - 60 req/min, most generous
-- **Hugging Face** - Unlimited, completely free
-- **OpenRouter** - Free models available
+### 🆓Free AI Provider
+- **Groq** - 30 req/min
 
 ---
 
@@ -164,41 +161,6 @@ Action execution:
 
 ---
 
-## 🆓 Free AI Providers
-
-This app supports **4 completely FREE AI providers** - no credit card required!
-
-### Groq ⭐ (Recommended)
-- **Free Tier**: 30 requests/minute
-- **Speed**: ⚡⚡⚡⚡⚡ (Fastest)
-- **Model**: llama-3.3-70b-versatile
-- **Setup**: https://console.groq.com/
-- **Best For**: Fast responses, high quality
-
-### Google Gemini ⭐
-- **Free Tier**: 60 requests/minute (Most generous!)
-- **Speed**: ⚡⚡⚡⚡
-- **Model**: gemini-1.5-flash
-- **Setup**: https://makersuite.google.com/app/apikey
-- **Best For**: Longer sessions, more requests
-
-### Hugging Face
-- **Free Tier**: Unlimited (queue-based)
-- **Speed**: ⚡⚡⚡
-- **Model**: meta-llama/Llama-3.2-3B-Instruct
-- **Setup**: https://huggingface.co/settings/tokens
-- **Best For**: Development, learning
-
-### OpenRouter
-- **Free Tier**: Limited free models
-- **Speed**: ⚡⚡⚡⚡
-- **Model**: meta-llama/llama-3.2-3b-instruct:free
-- **Setup**: https://openrouter.ai/keys
-- **Best For**: Multiple model access
-
-**See [FREE_AI_GUIDE.md](FREE_AI_GUIDE.md) for detailed setup instructions!**
-
----
 
 ## 🚀 Quick Start
 
@@ -258,8 +220,6 @@ vercel
 # Deploy to production
 vercel --prod
 ```
-
-**Total Cost: $0** 🎉
 
 ---
 
@@ -482,9 +442,6 @@ Action: suppress_issuer (Chase)
 
 ### AI Integration
 - **Groq** (llama-3.3-70b-versatile)
-- **Google Gemini** (gemini-1.5-flash)
-- **Hugging Face** (Llama-3.2-3B-Instruct)
-- **OpenRouter** (llama-3.2-3b-instruct:free)
 
 ### Deployment
 - **Hosting**: Vercel (free tier)
@@ -500,7 +457,7 @@ Action: suppress_issuer (Chase)
 
 ## 🚀 Deployment
 
-### Vercel (Recommended)
+### Vercel 
 
 #### From GitHub
 1. Push your code to GitHub
@@ -521,54 +478,6 @@ vercel
 vercel --prod
 ```
 
-### Netlify
-```bash
-# Build command
-npm run build
-
-# Publish directory
-.next
-
-# Environment variables
-NEXT_PUBLIC_AI_PROVIDER=groq
-NEXT_PUBLIC_AI_API_KEY=your_key
-```
-
-### Docker
-```dockerfile
-FROM node:18-alpine
-WORKDIR /app
-COPY package*.json ./
-RUN npm install
-COPY . .
-RUN npm run build
-EXPOSE 3000
-CMD ["npm", "start"]
-```
-
-```bash
-docker build -t payops-agent .
-docker run -p 3000:3000 \
-  -e NEXT_PUBLIC_AI_PROVIDER=groq \
-  -e NEXT_PUBLIC_AI_API_KEY=your_key \
-  payops-agent
-```
-
-### Static Export
-```javascript
-// next.config.js
-module.exports = {
-  output: 'export',
-  images: { unoptimized: true }
-}
-```
-
-```bash
-npm run build
-# Deploy the 'out' folder to any static host
-```
-
----
 
 ## ⚙️ Configuration
 
@@ -631,60 +540,6 @@ const RETRY_STORM_THRESHOLD = 4; // avg retries
 ```
 
 ---
-
-## 💰 Cost Analysis
-
-### Free Tier Comparison
-
-| Component | Provider | Free Tier | Usage | Cost |
-|-----------|----------|-----------|-------|------|
-| **Hosting** | Vercel | 100GB bandwidth/month | ~10GB | $0 |
-| **AI (Groq)** | Groq | 30 req/min | ~450 req/hour | $0 |
-| **AI (Gemini)** | Google | 60 req/min | ~900 req/hour | $0 |
-| **Domain** | Optional | N/A | 1 domain | $12/year |
-
-### With 8-Second Cycles
-
-```
-Requests per hour: 450
-Requests per day: 10,800
-Free tier (Groq): 43,200 req/day
-Usage: 25% of free tier
-Cost: $0
-```
-
-### Optimization for Free Tier
-
-```javascript
-// Increase cycle interval to reduce requests
-const CYCLE_INTERVAL = 15000; // 15 seconds instead of 8
-
-// Result:
-// - 240 requests/hour (vs 450)
-// - Still well within free tier
-// - Slightly slower detection
-```
-
-### Paid Tier Costs (If Needed)
-
-If you exceed free tiers:
-
-**Groq** (if you need more):
-- No paid tier yet (stays free)
-
-**Gemini**:
-- Free tier is 60 req/min (very generous)
-- Paid tier rarely needed for this use case
-
-**Claude** (alternative):
-- $3 per million input tokens
-- $15 per million output tokens
-- ~$0.01 per agent cycle
-- ~$14.40/day (8-second cycles)
-
----
-
-## 👨‍💻 Development
 
 ### Project Structure
 
@@ -848,18 +703,9 @@ SOFTWARE.
 ## 🙏 Acknowledgments
 
 - Built with [Next.js](https://nextjs.org/)
-- AI powered by [Groq](https://groq.com/), [Google Gemini](https://ai.google.dev/), [Hugging Face](https://huggingface.co/), and [OpenRouter](https://openrouter.ai/)
+- AI powered by [Groq](https://groq.com/)
 - Icons by [Lucide](https://lucide.dev/)
 - Hosted on [Vercel](https://vercel.com/)
-
----
-
-## 📞 Support
-
-- 📖 [Documentation](FREE_AI_GUIDE.md)
-- 🐛 [Report Bug](https://github.com/yourusername/payops-agent/issues)
-- 💡 [Request Feature](https://github.com/yourusername/payops-agent/issues)
-- 💬 [Discussions](https://github.com/yourusername/payops-agent/discussions)
 
 ---
 
@@ -871,7 +717,7 @@ If you find this project useful, please consider giving it a star! ⭐
 
 <div align="center">
 
-**Built with ❤️ using completely FREE technology**
+**Built with ❤️**
 
 [⬆ Back to Top](#-payops-agent---autonomous-ai-payment-operations-manager)
 
